@@ -6,8 +6,8 @@ env:
   AWS_REGION: us-east-1
 
 on:
-  push:
-    branches: [ assign-8 ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
