@@ -1,7 +1,7 @@
 console.log("Starting Function");
 const aws = require("aws-sdk");
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+sgMail.setApiKey("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");
 console.log("hi before");
 exports.handler = async function (event, context, callback) {
     console.log("email sent");
