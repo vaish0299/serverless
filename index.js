@@ -4,7 +4,7 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey("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");
 console.log("hi before");
 exports.handler = async function (event, context, callback) {
-    console.log("email sent");
+    console.log("inside handler");
 
     let message = event.Records[0].Sns.Message;
     console.log('Message received from SNS:', message);
@@ -72,10 +72,12 @@ const msg = {
   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
 }
 sgMail
-  .send(msg)
+  .send(params)
   .then(() => {
     console.log('Email sent')
   })
   .catch((error) => {
-    console.error(error.response.body)
-  })}
+    console.error(error)
+
+  })
+};
