@@ -132,7 +132,7 @@ exports.handler = async function (event, context, callback) {
 function getMessage() {
     const body = 'This is a test email using SendGrid from Node.js';
     return {
-      to: toAddress,
+      to: "vaishu0299@gmail.com",
       from: 'no-reply@demo.vaishnavisai.me',
       subject: 'Test email with Node.js and SendGrid',
       text: body,
@@ -142,6 +142,7 @@ function getMessage() {
   
   async function sendEmail() {
     try {
+        console.log("inside try");
       await sgMail.send(getMessage());
       console.log('Test email sent successfully');
     } catch (error) {
@@ -152,9 +153,10 @@ function getMessage() {
       }
     }
   }
-  
+  console.log("async fun");
   (async () => {
     console.log('Sending test email');
     await sendEmail();
+    console.log("after sendEmail");
   })();
 }
