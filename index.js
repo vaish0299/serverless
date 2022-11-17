@@ -119,7 +119,7 @@ console.log("after msg");
 // );
 
   sgMail
-    .sendEmail(msg)
+    .send(msg)
     .then((mailResponse) => {
       console.log("Email sent finally");
       callback(null, mailResponse);
