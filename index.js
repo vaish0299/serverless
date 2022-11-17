@@ -30,7 +30,7 @@ exports.handler = async (event) => {
     console.log('Message received from SNS:', message);
     let data = JSON.parse(message);
     console.log(data);
-    var response = await send(mailData);
+    var response = await send(data);
     console.log("It's Done!!!")
     return {
         statusCode: 200,
