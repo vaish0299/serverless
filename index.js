@@ -75,11 +75,11 @@ sgMail
   .send(msg)
   .then((response) => {
     console.log('Email sent');
-    callback(null, response);
+   // callback(null, response);
   })
   .catch((error) => {
     console.log(error)
-    callback(error)
+  //  callback(error)
   })
 
   console.log("end of handler");
