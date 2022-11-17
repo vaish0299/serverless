@@ -72,14 +72,14 @@ const msg = {
 }
 console.log("after msg")
 sgMail.send(msg)
-//   .then((response) => {
-//     console.log('Email sent');
-//    // callback(null, response);
-//   })
-//   .catch((error) => {
-//     console.log(error)
-//   //  callback(error)
-//   })
+  .then((response) => {
+    console.log('Email sent');
+   callback(null, response);
+  })
+  .catch((error) => {
+    console.log(error)
+   callback(error)
+  })
 
   console.log("end of handler");
 };
