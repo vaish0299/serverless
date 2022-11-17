@@ -1,9 +1,9 @@
 console.log("Starting Function");
 //import { Context, Callback } from 'aws-lambda';
-// const sgMail = require("@sendgrid/mail");
-// sgMail.setApiKey(
-//   "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"
-// );
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(
+  "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"
+);
 console.log("hi before");
 exports.handler = async function (event, context, callback) {
   console.log("inside handler");
@@ -76,57 +76,50 @@ exports.handler = async function (event, context, callback) {
   // 	templateId: event.template_id,
   // 	dynamic_template_data: event.dynamic_template_data,
   // };
-  // const msg = {
-
-  // 	templateId: "d-bbbc74a2f0bf4246b086ffae2fd02986",
-  // 	dynamic_template_data: event.dynamic_template_data,
-  // };
-
   const msg = {
     to: toAddress,
     from: "no-reply@demo.vaishnavisai.me", // Change to your verified sender
     subject: "Sending with SendGrid is Fun",
     text: "and easy to do anywhere, even with Node.js",
-    html : "rtyu"
-    // html: ` <!DOCTYPE html>
-    //           <html>
-    //             <head>
-    //               <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    //               <title>Account Verification</title>
-    //               <style>
-    //                 body {
-    //                   background-color: #FFFFFF;
-    //                   padding: 10px;
-    //                   margin: 10px;
-    //                 }
-    //               </style>
-    //             </head>
-    //             <body style="background-color: #FFFFFF; padding: 10px; margin: 10px;">
-    //             <article>
-    //               <h1>
-    //                 Hi ${userName},
-    //               </h1>
-    //               <br>
-    //               <h2>
-    //                 Welcome to demo.vaishnavisai.me,
-    //               </h2>
-    //               <p> Please user <a href=${link}>link</a> to verify your account.  </p>
-    //               <br>
-    //               <p> if you are unable to user the link, copy paste the below link in your browser</p>
-    //               <p>${link}</p>
-    //             </article>
-    //             </body>
-    //           </html>`,
+    html: ` <!DOCTYPE html>
+              <html>
+                <head>
+                  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                  <title>Account Verification</title>
+                  <style>
+                    body {
+                      background-color: #FFFFFF;
+                      padding: 10px;
+                      margin: 10px;
+                    }
+                  </style>
+                </head>
+                <body style="background-color: #FFFFFF; padding: 10px; margin: 10px;">
+                <article>
+                  <h1>
+                    Hi ${userName},
+                  </h1>
+                  <br>
+                  <h2>
+                    Welcome to demo.vaishnavisai.me,
+                  </h2>
+                  <p> Please user <a href=${link}>link</a> to verify your account.  </p>
+                  <br>
+                  <p> if you are unable to user the link, copy paste the below link in your browser</p>
+                  <p>${link}</p>
+                </article>
+                </body>
+              </html>`,
   };
-console.log("after msg elroy");
+console.log("after msg");
 
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(
-  "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"
-);
+// const sgMail = require("@sendgrid/mail");
+// sgMail.setApiKey(
+//   "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"
+// );
 
   sgMail
-    .send(msg)
+    .sendEmail(msg)
     .then((mailResponse) => {
       console.log("Email sent finally");
       callback(null, mailResponse);
