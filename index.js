@@ -3,16 +3,16 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey("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");
 console.log("hi before");
     exports.handler = async function (event, context, callback) {
-    console.log("inside handler");
+    // console.log("inside handler");
 
-    let message = event.Records[0].Sns.Message;
-    console.log('Message received from SNS:', message);
-    let data = JSON.parse(message);
-    console.log(data);
-    let fromAddress = data.fromAddress;
-    let toAddress = data.toAddress;
-    let userName = data.userName;
-    let link = data.link;
+    // let message = event.Records[0].Sns.Message;
+    // console.log('Message received from SNS:', message);
+    // let data = JSON.parse(message);
+    // console.log(data);
+    // let fromAddress = data.fromAddress;
+    // let toAddress = data.toAddress;
+    // let userName = data.userName;
+    // let link = data.link;
     // let params = {
     //   Destination: 
     //   {
@@ -64,7 +64,7 @@ console.log("hi before");
 
 
 const msg = {
-  to: 'sachinbk0411@gmail.com', // Change to your recipient
+  to: 'saivaishnavi11@gmail.com',// Change to your recipient
   from: 'vaishu0299@gmail.com', // Change to your verified sender
   subject: 'Sending with SendGrid is Fun',
   text: 'and easy to do anywhere, even with Node.js',
