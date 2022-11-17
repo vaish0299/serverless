@@ -13,7 +13,7 @@ async function send(mailData) {
         from: 'vaishu0299@gmail.com', // Change to your verified sender
         subject: 'Sending with SendGrid is Fun',
         text: 'Verify Link: ' + link,
-        html: `<p>{{ link }}</p>`,
+        html: `<p>${link}</p>`,
     }
     await sgMail
         .send(msg)
