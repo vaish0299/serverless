@@ -8,8 +8,7 @@ async function send(mailData) {
     var response;
     sgMail.setApiKey("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");
     const link = mailData.link;
-    let fromAddress = data.fromAddress;
-    let toAddress = data.toAddress;
+    let toAddress = mailData.toAddress;
     const msg = {
         to: toAddress,
         from: 'vaishu0299@gmail.com',
