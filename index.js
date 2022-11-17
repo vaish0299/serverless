@@ -1,5 +1,5 @@
 console.log("Starting Function");
-import { Context, Callback } from 'aws-lambda';
+//import { Context, Callback } from 'aws-lambda';
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey("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");
 console.log("hi before");
