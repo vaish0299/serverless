@@ -71,16 +71,15 @@ const msg = {
   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
 }
 console.log("after msg")
-sgMail
-  .send(msg)
-  .then((response) => {
-    console.log('Email sent');
-   // callback(null, response);
-  })
-  .catch((error) => {
-    console.log(error)
-  //  callback(error)
-  })
+sgMail.send(msg)
+//   .then((response) => {
+//     console.log('Email sent');
+//    // callback(null, response);
+//   })
+//   .catch((error) => {
+//     console.log(error)
+//   //  callback(error)
+//   })
 
   console.log("end of handler");
 };
