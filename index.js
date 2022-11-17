@@ -8,9 +8,11 @@ async function send(mailData) {
     var response;
     sgMail.setApiKey("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");
     const link = mailData.link;
+    let fromAddress = data.fromAddress;
+    let toAddress = data.toAddress;
     const msg = {
-        to: 'saivaishnavi11@gmail.com',// Change to your recipient
-        from: 'vaishu0299@gmail.com', // Change to your verified sender
+        to: toAddress,
+        from: 'vaishu0299@gmail.com',
         subject: 'Sending with SendGrid is Fun',
         text: 'Verify Link: ' + link,
         html: `<p>${link}</p>`,
