@@ -144,6 +144,7 @@ function getMessage() {
     try {
         console.log("inside try");
       await sgMail.send(getMessage());
+      callback(null,"success");
       console.log('Test email sent successfully');
     } catch (error) {
       console.error('Error sending test email');
