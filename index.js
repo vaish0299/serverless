@@ -124,7 +124,7 @@ sgMail
     console.log('Email sent finally');
   })
   .catch((error) => {
-    console.error(error)
-
+    console.error(error);
+    console.log(error);
   })
 };

@@ -1,9 +1,9 @@
-{
-  "to": { "email": "saivaishnavi11@gmail.com", "name": "John" },
-  "from": { "email": "no-reply@demo.vaishnavisai.me", "name": "Sender" },
+// {
+//   "to": { "email": "saivaishnavi11@gmail.com", "name": "John" },
+//   "from": { "email": "no-reply@demo.vaishnavisai.me", "name": "Sender" },
 
-  "template_id": "d-abcdef",
-  "dynamic_template_data": {
-    "verifylink": "123ertyu"
-  }
-}
+//   "template_id": "d-abcdef",
+//   "dynamic_template_data": {
+//     "verifylink": "123ertyutyy"
+//   }
+// }
