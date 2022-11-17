@@ -81,4 +81,6 @@ sgMail
     console.log(error)
     callback(error)
   })
+
+  console.log("end of handler");
 };
