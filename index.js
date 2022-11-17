@@ -1,8 +1,44 @@
 console.log("Starting Function");
-const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey("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");
+const sgMail = require('@sendgrid/mail');
+// sgMail.setApiKey("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");
 console.log("hi before");
-    exports.handler = async function (event, context, callback) {
+
+
+async function send(mailData) {
+    var response;
+    sgMail.setApiKey("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");
+    const msg = {
+        to: 'saivaishnavi11@gmail.com',// Change to your recipient
+        from: 'vaishu0299@gmail.com', // Change to your verified sender
+        subject: 'Sending with SendGrid is Fun',
+        text: 'Verify Link: ' + mailData.link,
+        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    }
+    await sgMail
+        .send(msg)
+        .then(() => {
+            response = 'EmailSent!!';
+        })
+        .catch((err) => {
+            response = err;
+        })
+        return response;
+}
+
+exports.handler = async (event) => {
+    let message = event.Records[0].Sns.Message;
+    console.log('Message received from SNS:', message);
+    let data = JSON.parse(message);
+    console.log(data);
+    var response = await send(mailData);
+    console.log("It's Done!!!")
+    return {
+        statusCode: 200,
+        body: response
+    }
+}
+
+    // exports.handler = async function (event, context, callback) {
     // console.log("inside handler");
 
     // let message = event.Records[0].Sns.Message;
@@ -63,23 +99,23 @@ console.log("hi before");
 
 
 
-const msg = {
-  to: 'saivaishnavi11@gmail.com',// Change to your recipient
-  from: 'vaishu0299@gmail.com', // Change to your verified sender
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-}
-console.log("after msg")
-sgMail.send(msg)
+// const msg = {
+//   to: 'saivaishnavi11@gmail.com',// Change to your recipient
+//   from: 'vaishu0299@gmail.com', // Change to your verified sender
+//   subject: 'Sending with SendGrid is Fun',
+//   text: 'and easy to do anywhere, even with Node.js',
+//   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+// }
+// console.log("after msg")
+// sgMail.send(msg)
 //   .then((response) => {
 //     console.log('Email sent');
-//    // callback(null, response);
+//    callback(null, response);
 //   })
 //   .catch((error) => {
 //     console.log(error)
-//   //  callback(error)
+//    callback(error)
 //   })
 
-  console.log("end of handler");
-};
+//   console.log("end of handler");
+// };
