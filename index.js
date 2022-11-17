@@ -132,7 +132,7 @@ exports.handler = async function (event, context, callback) {
 function getMessage() {
     const body = 'This is a test email using SendGrid from Node.js';
     return {
-      to: toAddress,
+      to: "vaishu0299@gmail.com",
       from: 'no-reply@demo.vaishnavisai.me',
       subject: 'Test email with Node.js and SendGrid',
       text: body,
