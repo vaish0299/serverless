@@ -11,7 +11,7 @@ async function send(mailData) {
     let toAddress = mailData.toAddress;
     const msg = {
         to: toAddress,
-        from: 'vaishu0299@gmail.com',
+        from: 'no-reply@demo.vaishnavisai.me',
         subject: 'Sending with SendGrid is Fun',
         text: 'Verify Link: ' + link,
         html: `<p>${link}</p>`,
